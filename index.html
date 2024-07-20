@@ -85,7 +85,13 @@ width: auto;
 <div id='full'>
 <p><canvas></canvas></p>  
 <p><input type='file' id='full-img' accept='image/*'></p>  
-<p>Zoom: <input type='range' id='full-zoom' min='0' max='1' step='0.01' value='1'></p>
+<p>
+<div class="row">
+<div class="col">
+<p><strong>Zoom:</strong></p>
+<p><input type='range' id='full-zoom' min='0' max='1' step='0.01' value='1'></p>
+</div>
+<div class="col">
 <p>Alpha: <input type='range' id='full-alpha' min='0' max='1' step='0.01' value='0.5'></p>
 <p>
 <button onclick="selectFile()">Pilih file</button>
