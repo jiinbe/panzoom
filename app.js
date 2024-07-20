@@ -247,7 +247,7 @@ mask.addEventListener('load', function () {
   divide.draw();
 });
 mask.setAttribute('crossOrigin', 'anonymous');
-mask.src = 'mask.png';
+mask.src = 'twibbon.png';
 
 var intro = $('#intro');
 
