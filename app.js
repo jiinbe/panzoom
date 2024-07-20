@@ -268,3 +268,8 @@ $('#return-intro').addEventListener('click', function () {
 function $(selector) {
   return document.querySelector(selector);
 }
+
+// input
+function selectFile() {
+  document.getElementById("full-img").click();
+}
