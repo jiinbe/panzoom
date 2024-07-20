@@ -46,25 +46,24 @@ width: auto;
 <main>
 <h1>Example Panzoom</h1>
 <div id='full'>
-<div class="canvas-container">
+<p>
 <canvas></canvas>
-</div>
-<div class="form-group">
+</p>
+  
+<p>
 <input type='file' id='full-img' accept='image/*'>
-</div>
-<div class="form-group">
-<label for='full-zoom'>缩放</label>
-<input type='range' id='full-zoom' min='0' max='1' step='0.01' value='1'>
-</div>
-<div class="form-group">
-<label for='full-alpha'>透明度</label>
-<input type='range' id='full-alpha' min='0' max='1' step='0.01' value='0.5'>
-</div>
-<div class="form-group">
-<div class="save myth">
-<div>保存</div>
-</div>
-</div>
+</p>
+  
+<p>
+Zoom: <input type='range' id='full-zoom' min='0' max='1' step='0.01' value='1'>
+</p>
+
+<p>
+Alpha: <input type='range' id='full-alpha' min='0' max='1' step='0.01' value='0.5'>
+</p>
+
+<button class="save myth">Doenload</button>
+  
 </div>
 
 <div id='divide'>
