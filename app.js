@@ -1,4 +1,4 @@
-var SIZE = 540;
+var SIZE = 1024;
 
 var full = $('#full');
 
