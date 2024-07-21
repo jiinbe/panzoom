@@ -18,8 +18,8 @@
 <main>
 <h1>Example Panzoom</h1>
 <div id='full'>
-<p><canvas class="preview"></canvas></p>  
-<p><input type='file' id='full-img' accept='image/*' onchange="previewFile()"></p>  
+<p><canvas></canvas></p>  
+<p><input type='file' id='full-img' accept='image/*'></p>  
 <div class="row">
 <div class="col">
 <label for="full-zoom">Zoom:</label>
@@ -30,15 +30,6 @@
 <input type='range' id='full-alpha' min='0' max='1' step='0.01' value='0.5'>
 </div>
 </div><!-- class="row" -->
-
-<p>
-<button class="filter" data-filter="vintage">Vintage</button>
-<button class="filter" data-filter="lomo">Lomo</button>
-<button class="filter" data-filter="clarity">Clarity</button>
-<button class="filter" data-filter="glowingSun">Glowing Sun</button>
-<button class="filter" data-filter="hemingway">Hemingway</button>
-<button class="filter" data-filter="concentrate">Concentrate</button>
-</p>
     
 <p>
 <button onclick="selectFile()">Pilih file</button>
@@ -67,45 +58,5 @@
 </main>
 
 <script src="app.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.pack.js"></script>
-<script>
-var theCanvas;
-
-function previewFile() {
-var preview = document.querySelector(".preview");
-var file = document.querySelector('input[type=file]').files[0];
-var reader = new FileReader();
-
-reader.addEventListener("load", function() {
-preview.src = reader.result;
-}, false);
-
-if (file) {
-reader.readAsDataURL(file)
-theCanvas = Caman('.preview')
-}
-}
-
-var filters = document.querySelectorAll('.filter')
-
-Array.from(filters).forEach(function(node) {
-node.addEventListener('click', function(e) {
-if (typeof theCanvas === 'undefined') return;
-    
-var button = e.target,
-filter = button.dataset.filter,
-filterName = button.textContent;
-    
-button.textContent = 'Processing...';
-    
-theCanvas.reset();
-theCanvas[filter]();
-    
-return theCanvas.render(function () {
-button.textContent = filterName
-});
-})
-})
-</script>
 </body>
 </html>
